@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://smashawk.github.io/nijibox-list",
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
