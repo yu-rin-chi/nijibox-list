@@ -59,7 +59,7 @@ class App extends Component {
     })
   }
   loadUser(){
-        return this.httpClient.get('/who/user/40')
+        return this.httpClient.get('/who/user/1')
           .then(this.commonResponseHandling)
           .then((result)=>{
               this.setState({user : result});
