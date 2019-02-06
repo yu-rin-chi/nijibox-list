@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { Component } from "react";
 import axios from "axios";
 
@@ -51,7 +52,7 @@ class App extends Component {
   loadDepartments() {
     console.log("dep");
     return this.httpClient
-      .get("/who/departments/")
+      .get("/who/departments/{department_id}")
       .then(this.commonResponseHandling)
       .then(result => {
         this.setState({ departmentList: result });
@@ -136,21 +137,23 @@ class App extends Component {
     console.log("render");
     return (
       <div className="App">
+        {/* 部署選択 */}
         <select>
           {this.state.departmentList.map((row, index) => {
-            //map:繰り返す
+            // map:繰り返す
             return <option key={index}>{row.department_name}</option>;
           })}
         </select>
         {this.state.isLogin ? (
           <div>
+            {/* ひらがなを入力してボタンを押すと、handleTextChange()が起こる。 */}
             <form>
               <input type="text" value={this.state.some_code} />
               <button onClick={() => this.this.handleTextChange()}>
                 名前から表示する
               </button>
             </form>
-
+            {/* 番号を入力してボタンを押すと、　　が起こる。 */}
             <form>
               <input type="text" name="number" />
               <button onClick={() => this.this.loadUserNumber()}>
